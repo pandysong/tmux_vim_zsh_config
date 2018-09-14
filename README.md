@@ -184,6 +184,7 @@ z= to have a list to correct the word under cursor
 
 ### always read the manual of vim
 
+```
 4. Operating on the Visual area				*visual-operators*
 
 The operators that can be used are:
@@ -248,7 +249,7 @@ Additionally the following commands can be used:
      using CTRL-V.
 (4): When using CTRL-V operates on the block only.
 
-
+```
 
 ## shell feature
 
