@@ -17,7 +17,7 @@ map <esc>[B <down>
 map <esc>[D <left>
 map <esc>[C <right>
 
-" enable true color 24 bit, so that we do not need to 
+" enable true color 24 bit, so that we do not need to
 " http://lotabout.me/2018/true-color-for-tmux-and-vim/
 if has("termguicolors")
     " enable true color
@@ -70,6 +70,18 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 
 " YCM plugin
+" 1) Step 1, Install:
+" cd .vim/bundle/YouCompleteMe
+" python3 install.py --clang-completer
+" 2) Step 2, configure project
+" add following python file  in project top directory
+" ycm_extra_conf.py
+" with content
+"
+" def Settings(**kwargs):
+"    return {
+"        'flags': ['-x', 'c', '-Wall', '-Wextra', '-Werror'],
+"    }
 Plugin 'Valloric/YouCompleteMe'
 
 " Text Exchange Plugin
@@ -123,6 +135,8 @@ Plugin 'fatih/vim-go'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 
+Plugin 'ianva/vim-youdao-translater'
+
 if executable('ag')
         let g:ackprg = 'ag --vimgrep'
 endif
@@ -168,6 +182,7 @@ set cscopetag
 "cabbrev mt AsyncRun -raw ./MakeTags.sh
 "cabbrev mc AsyncRun -raw ./another_compile.sh
 "cabbrev vg AsyncRun -raw cd ..; ./runimg2.sh ; cd -
+cabbrev ss :AsyncRun! ag --vimgrep <cword>
 
 cabbrev ch w !xclip
 " auto open quickfix window after AsyncRun is started
@@ -535,3 +550,13 @@ tnoremap <esc>[D <left>
 tnoremap <esc>[C <right>
 let g:markdown_fold_style = 'nested'
 let g:airline#extensions#tabline#enabled = 1
+
+
+" for ianva/vim-youdao-translater
+"
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
+
+" for ale linter plugin, we now know where the error comes from, as there might be multiple linter in system:
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
