@@ -136,6 +136,7 @@ Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 
 Plugin 'ianva/vim-youdao-translater'
+Plugin 'makerj/vim-pdf'
 
 if executable('ag')
         let g:ackprg = 'ag --vimgrep'

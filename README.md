@@ -281,6 +281,32 @@ def Settings(**kwargs):
     }
 ```
 
+### view pdf in vim
+
+The plugin "https://github.com/makerj/vim-pdf" make the vim pdf viewer.
+
+It uses `pdftotext` to convert the pdf to text.
+
+In OSX, we need to compile and install pdftotext manually:
+
+download from:
+https://www.xpdfreader.com/pdftotext-man.html
+
+```bash
+mkdir build
+cd build
+cmake ../
+make
+make install
+sudo make install
+```
+
+using following command to view pdf
+
+```bash
+vim some.pdf
+```
+
 ## shell feature
 
 ### edit command line in vim
