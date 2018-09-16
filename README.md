@@ -14,15 +14,15 @@ C-n r  : reload tmux config
 
 ###  create pane
 
-C-n s 
+C-n s
 C-n v
 
 
-### move around panes 
+### move around panes
 
 ### if vim is not active
 
-One could use the same vim binding to move around 
+One could use the same vim binding to move around
 
 C-h
 C-j
@@ -59,7 +59,7 @@ C-n L
 
 show the diff for the current file:
 
-:Gdiff 
+:Gdiff
 
 Show current status:
 
@@ -107,7 +107,7 @@ select one of the snipper and then press C-j
 by plugin `Raimondi/delimitMate`
 
 
-### Asyncrun 
+### Asyncrun
 
 This could be compiled with compile script to do asynchronizely compile.
 
@@ -147,6 +147,19 @@ And it just works automatically.
 
 searching all c code from current working directory:
 :Ack --cc yourkeyword
+
+using :ss<space>
+
+This is abbreviation of following command
+
+```
+:AsyncRun! ag --vimgrep <cword>
+```
+
+you may add more options to the command line, e.g., search only C file
+```
+:AsyncRun! ag --cc --vimgrep <cword>
+```
 
 ### copy to wclip
 
@@ -249,6 +262,23 @@ Additionally the following commands can be used:
      using CTRL-V.
 (4): When using CTRL-V operates on the block only.
 
+```
+
+### translation
+
+using C-t for translation for the word under the cursor or for the paragraph of selection.
+
+### YCMCompleter
+
+add file on the any directory the file path will go to the top directory:
+
+".ycm_extra_conf.py"
+
+```
+def Settings(**kwargs):
+    return {
+        'flags': ['-x', 'c', '-Wall', '-Wextra', '-Werror'],
+    }
 ```
 
 ## shell feature
