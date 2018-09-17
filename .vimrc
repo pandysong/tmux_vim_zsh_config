@@ -6,12 +6,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " highlight when searching
+
 set hlsearch
 
-"set t_ku=[A
-"set t_kd=[B
-"set t_kl=[D
-"set t_kr=[C
 map <esc>[A <up>
 map <esc>[B <down>
 map <esc>[D <left>
@@ -135,12 +132,13 @@ Plugin 'fatih/vim-go'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 
+Plugin 'rhysd/devdocs.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jpalardy/vim-slime'
+
 Plugin 'ianva/vim-youdao-translater'
 Plugin 'makerj/vim-pdf'
 
-if executable('ag')
-        let g:ackprg = 'ag --vimgrep'
-endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -551,6 +549,13 @@ tnoremap <esc>[D <left>
 tnoremap <esc>[C <right>
 let g:markdown_fold_style = 'nested'
 let g:airline#extensions#tabline#enabled = 1
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 
 " for ianva/vim-youdao-translater
