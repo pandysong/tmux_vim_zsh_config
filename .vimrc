@@ -138,6 +138,7 @@ Plugin 'jpalardy/vim-slime'
 
 Plugin 'ianva/vim-youdao-translater'
 Plugin 'makerj/vim-pdf'
+Plugin 'pandysong/cscope.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -197,18 +198,11 @@ let g:autopep8_cmd="python3 -m autopep8"
 let g:autopep8_max_line_length=100
 let g:autopep8_disable_show_diff=0
 
-" If 'cscoperelative' is set, then in absence of a prefix given to cscope
-" (prefix is the argument of -P option of cscope), basename of cscope.out
-" location (usually the project root directory) will be used as the prefix to
-" construct an absolute path. The default is off. Note: This option is only
-" effective when cscope (cscopeprg) is initialized without a prefix path (-P).
-set csre
-
 " make the search result show at quick fix window
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " short cut to search the symbol and search the calling function
-autocmd FileType c nnoremap <leader>s :cs find s <cword>
-autocmd FileType c nnoremap <leader>c :cs find c <cword>
+autocmd FileType c nnoremap <leader>s :call cscope#find('s', expand('<cword>'))<CR>
+autocmd FileType c nnoremap <leader>c :call cscope#find('c', expand('<cword>'))<CR>
 
 " in order for following to work, add ~/usr/go/bin to PATH
 " as GoReferrers commands uses the tools in that path
@@ -566,3 +560,18 @@ noremap <leader>yd :<C-u>Yde<CR>
 
 " for ale linter plugin, we now know where the error comes from, as there might be multiple linter in system:
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" pandysong/cscope.vi
+"
+
+let g:cscope_use_quickfix=1
+" If 'cscoperelative' is set, then in absence of a prefix given to cscope
+" (prefix is the argument of -P option of cscope), basename of cscope.out
+" location (usually the project root directory) will be used as the prefix to
+" construct an absolute path. The default is off. Note: This option is only
+" effective when cscope (cscopeprg) is initialized without a prefix path (-P).
+
+" must not use this if we are using cscope.vim plugin, otherwise the directory would be wrong
+" set csre
+
+
