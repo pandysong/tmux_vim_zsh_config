@@ -307,6 +307,32 @@ using following command to view pdf
 vim some.pdf
 ```
 
+### devdocs
+
+:Devdocs [query]
+
+Refer to https://github.com/rhysd/devdocs.vim
+
+### slime for REPL
+
+Send to a tmux pane
+
+```
+":"     means current window, current pane (a reasonable default)
+":i"    means the ith window, current pane
+":i.j"  means the ith window, jth pane
+"h:i.j" means the tmux session where h is the session identifier
+        (either session name or number), the ith window and the jth pane
+"%i"    means i refers the pane's unique id
+```
+
+Refer to `https://github.com/jpalardy/vim-slime`
+
+
+### vim-gitgutter
+
+Show the git information (where the line is added or removed or changed on a gutter in Vim).
+
 ## shell feature
 
 ### edit command line in vim
