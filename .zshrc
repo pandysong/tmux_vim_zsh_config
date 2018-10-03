@@ -104,5 +104,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 
 # edit command using vi
-set -o vi
 export TERM=xterm-color
+bindkey -v
+bindkey '^R' history-incremental-search-backward
