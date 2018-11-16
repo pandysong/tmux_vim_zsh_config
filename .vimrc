@@ -140,6 +140,7 @@ Plugin 'ianva/vim-youdao-translater'
 Plugin 'makerj/vim-pdf'
 Plugin 'pandysong/cscope.vim'
 
+Plugin 'pandysong/ghost-text.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
