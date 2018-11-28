@@ -590,4 +590,6 @@ let g:cscope_use_quickfix=1
 " must not use this if we are using cscope.vim plugin, otherwise the directory would be wrong
 " set csre
 
-
+" resolve the delete key not working issue
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=indent,eol,start
