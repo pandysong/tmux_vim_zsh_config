@@ -203,7 +203,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:flake8_cmd="python3 -m flake8"
 let no_flake8_maps = 1
 let g:autopep8_cmd="python3 -m autopep8"
-let g:autopep8_max_line_length=80
+let g:autopep8_max_line_length=79
 let g:autopep8_disable_show_diff=0
 
 " make the search result show at quick fix window
@@ -504,7 +504,7 @@ let g:clang_format#style_options = {
             \ "AlignTrailingComments" : "true",
             \ "Language" : "Cpp",
             \ "IndentWidth" : 4,
-            \ "ColumnLimit" : 80,
+            \ "ColumnLimit" : 79,
             \ "BreakBeforeBraces" : "Allman",
             \ "IndentCaseLabels" : "false",
             \ "BinPackParameters" : "true",
@@ -536,7 +536,7 @@ set viminfo+=!
 
 " make the tab completion like in bash
 set wildmode=longest,list
-set textwidth=80
+set textwidth=79
 
 highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 
