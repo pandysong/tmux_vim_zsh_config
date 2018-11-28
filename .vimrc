@@ -555,6 +555,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 
+" using :SlimeConfig to configure which session:window.pane as target
+" ":"     means current window, current pane (a reasonable default)
+" ":i"    means the ith window, current pane
+" ":i.j"  means the ith window, jth pane
+" "h:i.j" means the tmux session where h is the session identifier
+"        (either session name or number), the ith window and the jth pane
+" "%i"    means i refers the pane's unique id
+
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
