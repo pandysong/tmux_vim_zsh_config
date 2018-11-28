@@ -140,6 +140,13 @@ Plugin 'ianva/vim-youdao-translater'
 Plugin 'makerj/vim-pdf'
 Plugin 'pandysong/cscope.vim'
 
+" rfc reading"
+Plugin 'mhinz/vim-rfc.git'
+Plugin 'vim-scripts/rfc-syntax'
+
+" open url from vim
+Plugin 'henrik/vim-open-url.git'
+
 Plugin 'pandysong/ghost-text.vim'
 
 " All of your Plugins must be added before the following line
