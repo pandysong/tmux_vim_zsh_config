@@ -143,11 +143,12 @@ Plugin 'pandysong/cscope.vim'
 " rfc reading"
 Plugin 'mhinz/vim-rfc.git'
 Plugin 'vim-scripts/rfc-syntax'
+Plugin 'pandysong/highlight.vim'
 
 " open url from vim
-Plugin 'henrik/vim-open-url.git'
+" Plugin 'henrik/vim-open-url.git'
 
-Plugin 'pandysong/ghost-text.vim'
+"Plugin 'pandysong/ghost-text.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
