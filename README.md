@@ -2,6 +2,19 @@
 
 Tmux Vim Zsh Setup for my development environment.
 
+## after cloning this repo
+
+clone the theme package:
+```
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+```
+
+You might want to install Vundle as well:
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
 ## Tmux feature
 
 ### default shell

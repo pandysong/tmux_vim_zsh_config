@@ -79,7 +79,7 @@ Plugin 'git://github.com/scrooloose/nerdtree.git'
 "    return {
 "        'flags': ['-x', 'c', '-Wall', '-Wextra', '-Werror'],
 "    }
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Text Exchange Plugin
 " see the video in
