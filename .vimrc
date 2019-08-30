@@ -149,6 +149,8 @@ Plugin 'pandysong/highlight.vim'
 " Plugin 'henrik/vim-open-url.git'
 
 "Plugin 'pandysong/ghost-text.vim'
+Plugin 'itchyny/calendar.vim'
+Plugin 'pseewald/vim-anyfold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -594,3 +596,8 @@ let g:cscope_use_quickfix=1
 " resolve the delete key not working issue
 " https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=indent,eol,start
+
+" highlight folded color
+
+hi Folded guifg='Black'
+hi Folded guibg='DarkYellow'
