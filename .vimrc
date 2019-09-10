@@ -195,7 +195,7 @@ set cscopetag
 "cabbrev vg AsyncRun -raw cd ..; ./runimg2.sh ; cd -
 cabbrev ss :AsyncRun! ag --vimgrep <cword>
 
-cabbrev ch w !xclip
+cabbrev ch w !xclip  -selection clipboard
 " auto open quickfix window after AsyncRun is started
 augroup MyGroup
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
