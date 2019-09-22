@@ -25,6 +25,7 @@ endif
 " use Leader key + v to locate the current open file in NERDTree
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>v :NERDTreeFind<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Let system know what is F7 and F8
 " set <F7>=[18~
@@ -195,7 +196,8 @@ set cscopetag
 "cabbrev vg AsyncRun -raw cd ..; ./runimg2.sh ; cd -
 cabbrev ss :AsyncRun! ag --vimgrep <cword>
 
-cabbrev ch w !xclip  -selection clipboard
+cabbrev ch :call system('xclip -selection clipboard', @0)
+cabbrev cp let @0=expand("%:p")
 " auto open quickfix window after AsyncRun is started
 augroup MyGroup
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
