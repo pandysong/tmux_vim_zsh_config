@@ -604,3 +604,6 @@ set backspace=indent,eol,start
 hi Folded guifg='Black'
 hi Folded guibg='DarkYellow'
 noremap <leader>m :let @@=expand("%:p").":".line(".")
+
+" make the line auto-wraping work in Chinese
+:set formatoptions+=m
