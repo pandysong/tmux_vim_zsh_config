@@ -195,6 +195,7 @@ set cscopetag
 "cabbrev mc AsyncRun -raw ./another_compile.sh
 "cabbrev vg AsyncRun -raw cd ..; ./runimg2.sh ; cd -
 cabbrev ss :AsyncRun! ag --vimgrep <cword>
+cabbrev cc :AsyncRun! cat cscope.files \| xargs ag --vimgrep <cword>
 
 cabbrev ch :call system('xclip -selection clipboard', @0)
 cabbrev cp let @0=expand("%:p")
