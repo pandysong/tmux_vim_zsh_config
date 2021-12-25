@@ -76,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -107,3 +107,37 @@ export PATH="/usr/local/sbin:$PATH"
 export TERM=xterm-color
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+export PATH="/Users/pandysong/flutter/bin:$HOME/.tmuxifier/bin:/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH" 
+export PATH="/usr/local/opt/icu4c/bin:$PATH" 
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/gstreamer/bin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="$HOME/bin/git-repo/:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/pandysong/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/pandysong/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/pandysong/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/pandysong/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="$HOME/bin:/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8

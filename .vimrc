@@ -100,7 +100,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'rhysd/vim-clang-format'
 
 " Ultisnips
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " snippets scritps for various language
 Plugin 'honza/vim-snippets'
@@ -130,7 +130,7 @@ Plugin 'pandysong/vim-flake8'
 Plugin 'pandysong/vim-autopep8'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'fatih/vim-go'
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 
 Plugin 'rhysd/devdocs.vim'
@@ -144,14 +144,16 @@ Plugin 'pandysong/cscope.vim'
 " rfc reading"
 Plugin 'mhinz/vim-rfc.git'
 Plugin 'vim-scripts/rfc-syntax'
-Plugin 'pandysong/highlight.vim'
 
 " open url from vim
-" Plugin 'henrik/vim-open-url.git'
+Plugin 'henrik/vim-open-url.git'
 
 "Plugin 'pandysong/ghost-text.vim'
 Plugin 'itchyny/calendar.vim'
 Plugin 'pseewald/vim-anyfold'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'jupyter-vim/jupyter-vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -194,11 +196,10 @@ set cscopetag
 "cabbrev mt AsyncRun -raw ./MakeTags.sh
 "cabbrev mc AsyncRun -raw ./another_compile.sh
 "cabbrev vg AsyncRun -raw cd ..; ./runimg2.sh ; cd -
-cabbrev ss :AsyncRun! ag --vimgrep <cword>
+cabbrev ss :AsyncRun! ag -U --vimgrep <cword>
 cabbrev cc :AsyncRun! cat cscope.files \| xargs ag --vimgrep <cword>
 
-cabbrev ch :call system('xclip -selection clipboard', @0)
-cabbrev cp let @0=expand("%:p")
+cabbrev ch w !xclip
 " auto open quickfix window after AsyncRun is started
 augroup MyGroup
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
@@ -232,7 +233,7 @@ autocmd FileType go nnoremap <leader>c :GoCallers<Enter>
 " Ctags needs to be called with the --fields=+l (that's a lowercase L, not a
 " one) option because YCM needs the language:<lang> field in the tags output.
 
-let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_collect_identifiers_from_tags_files = 1
 
 
 " generates compile_commands.json which is needed by YCM
@@ -267,7 +268,7 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 set hidden
 
-set makeprg=./compile.sh\ $*
+" set makeprg=./compile.sh\ $*
 
 " NOW WE CAN:
 " run :make to build
@@ -294,7 +295,7 @@ set expandtab
 " nnoremap <C-]> :YcmCompleter GoToImprecise<CR>
 "
 " 2018-4-11 I need to use ycm to jump with Python code
-autocmd FileType python nnoremap <C-]> :YcmCompleter GoToDefinition<CR>
+" autocmd FileType python nnoremap <C-]> :YcmCompleter GoToDefinition<CR>
 "autocmd FileType c unmap <C-]>
 
 
@@ -372,11 +373,11 @@ let g:airline_powerline_fonts = 1
 " hi YcmErrorLine ctermbg=magenta ctermfg=white
 
 " highlight on the line
-hi clear YcmErrorLine
+" hi clear YcmErrorLine
 " gutter sign
-hi YcmErrorSign ctermbg=DarkRed
+" hi YcmErrorSign ctermbg=DarkRed
 " highligh on the error words
-hi YcmErrorSection ctermbg=DarkRed
+" hi YcmErrorSection ctermbg=DarkRed
 
 
 
@@ -467,8 +468,8 @@ hi YcmErrorSection ctermbg=DarkRed
 "
 
 " for debuging ycm
-let g:ycm_keep_logfiles = 1
-let g:ycm_log_level = 'debug'
+" let g:ycm_keep_logfiles = 1
+" let g:ycm_log_level = 'debug'
 
 set dictionary=/usr/share/dict/cracklib-small
 " now you could use
@@ -532,11 +533,11 @@ autocmd FileType python :autocmd BufWritePre <buffer> :Autopep8
 
 " Ultisnips short cut, this is important as the default value conflicts with
 " YCM
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+"let g:UltiSnipsExpandTrigger="<C-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
+"let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 set viminfo+=!
 
@@ -606,5 +607,33 @@ hi Folded guifg='Black'
 hi Folded guibg='DarkYellow'
 noremap <leader>m :let @@=expand("%:p").":".line(".").": ".expand("<cword>")
 
-" make the line auto-wraping work in Chinese
+" make the auto line wraping work in Chinese, try: gq or gqip 
 :set formatoptions+=m
+:set fileencodings=utf-8,gb18030,utf-16,big5
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-css', 'coc-cmake', 'coc-clangd', 'coc-eslint', 'coc-vetur']
+
+hi Pmenu guibg=#262931
+hi PmenuSel ctermfg=Black ctermbg=White guifg=Black guibg=White 
+
+au BufNewFile,BufRead *.html,*.js,*.vue set tabstop=2
+au BufNewFile,BufRead *.html,*.js,*.vue set softtabstop=2
+au BufNewFile,BufRead *.html,*.js,*.vue set shiftwidth=2
+au BufNewFile,BufRead *.html,*.js,*.vue set expandtab
+au BufNewFile,BufRead *.html,*.js,*.vue set autoindent
+au BufNewFile,BufRead *.html,*.js,*.vue set fileformat=unix
+
+" Coc-Snippet
+" use enter to confirm the snippets selection
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
