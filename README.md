@@ -4,6 +4,13 @@ Tmux Vim Zsh Setup for my development environment.
 
 ## after cloning this repo
 
+```
+ln tmux_vim_zsh_config/.tmux.conf ./
+ln tmux_vim_zsh_config/.vimrc ./
+```
+
+install tmux (if not yet)
+
 install zsh (if not yet)
 
 ```
@@ -28,6 +35,21 @@ You might want to install Vundle as well:
 
 ```
 git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+in vim, install Plugins
+
+```
+:PluginInstall
+```
+
+Install node, refer to: https://nodejs.org/en/download/
+
+
+In vim, init coc
+```
+cd .vim/bundle/coc.nvim
+npm ci
 ```
 
 ## Tmux feature

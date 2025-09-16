@@ -65,7 +65,7 @@ let g:airline_theme='alduin'
 Plugin 'edkolev/tmuxline.vim'
 
 " NERDTree
-Plugin 'git://github.com/scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree.git'
 
 " YCM plugin
 " 1) Step 1, Install:
@@ -146,7 +146,7 @@ Plugin 'mhinz/vim-rfc.git'
 Plugin 'vim-scripts/rfc-syntax'
 
 " open url from vim
-Plugin 'henrik/vim-open-url.git'
+" Plugin 'henrik/vim-open-url.git'
 
 "Plugin 'pandysong/ghost-text.vim'
 Plugin 'itchyny/calendar.vim'
