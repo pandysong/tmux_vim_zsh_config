@@ -6,13 +6,13 @@ Tmux Vim Zsh Setup for my development environment.
 
 clone the theme package:
 ```
-git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+git clone  git@github.com:jimeh/tmux-themepack.git~/.tmux-themepack
 ```
 
 You might want to install Vundle as well:
 
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ## Tmux feature
