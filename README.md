@@ -4,6 +4,21 @@ Tmux Vim Zsh Setup for my development environment.
 
 ## after cloning this repo
 
+install zsh (if not yet)
+
+```
+sudo apt install zsh
+```
+
+Refer to: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+
+install oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Refer to : https://ohmyz.sh/#install
+
 clone the theme package:
 ```
 git clone  git@github.com:jimeh/tmux-themepack.git~/.tmux-themepack
