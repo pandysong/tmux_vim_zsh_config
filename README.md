@@ -44,17 +44,6 @@ sudo apt install nodejs
 sudo apt install cscope
 ```
 
-clone the theme package:
-```
-git clone  git@github.com:jimeh/tmux-themepack.git~/.tmux-themepack
-```
-
-You might want to install Vundle as well:
-
-```
-git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
 in vim, install Plugins
 
 ```
@@ -74,6 +63,12 @@ Now reopen vim, it will automatically install coc.nvim related plugins.
 in .zshrc add following to enable vi mode in ZSH:
 ```
 bindkey -v
+```
+# install Tmux related
+
+clone the theme package:
+```
+git clone  git@github.com:jimeh/tmux-themepack.git~/.tmux-themepack
 ```
 
 ## Tmux feature
