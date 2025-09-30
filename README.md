@@ -37,10 +37,9 @@ In VIM:
 :PlugInstall
 ```
 
-Install nodejs, cscope
+Install cscope
 
 ```
-sudo apt install nodejs
 sudo apt install cscope
 ```
 
@@ -50,7 +49,7 @@ in vim, install Plugins
 :PluginInstall
 ```
 
-Install node, refer to: https://nodejs.org/en/download/
+Install nodejs, refer to: https://nodejs.org/en/download/
 
 Install coc vim:
 ```
