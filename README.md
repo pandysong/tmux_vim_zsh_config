@@ -406,3 +406,10 @@ Show the git information (where the line is added or removed or changed on a gut
 ### edit command line in vim
 
 press ESC and then press v to enter vim to edit the current line
+
+
+###  git lg and git lg2
+
+git config --global alias.lg  lg1
+git config --global alias.lg1  "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+git config --global alias.lg2  "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
